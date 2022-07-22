@@ -17,7 +17,7 @@
 `yarn dev`
 
 ## Author
-  - Emilly Moura :purple_heart:
+  - Emilly Landim :purple_heart:
  
 
 
