@@ -30,6 +30,34 @@ export const Form = styled.form`
   }
 `
 
+export const List = styled.ul`
+  background-color: white;
+  list-style: none;
+  margin-top: 20px;
+
+  li {
+    padding: 15px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    & + li {
+      border-top: 1px solid #eee;
+    }
+   
+    a {
+      color: #0d260d;
+      text-decoration: none;
+    }
+
+    span {
+      display: flex;
+      justify-content: center;
+    }
+  }
+`
+
 const animate = keyframes`
   from {
     transform: rotate(0deg);
@@ -64,6 +92,17 @@ export const SubmitButton = styled.button.attrs((props: SubmitButtonProps) => ({
      }
    `
  }
+`
+
+export const RemoveButton = styled.button.attrs({
+  type: 'button'
+})`
+  background: transparent;
+  color: #0D2636;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  padding: 1px 10px 1px 0px;
 `
 
 type SubmitButtonProps = {

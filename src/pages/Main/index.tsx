@@ -1,7 +1,8 @@
 import * as S from './styles';
-import { FaGithub, FaPlus, FaSpinner } from 'react-icons/fa';
+import { FaGithub, FaPlus, FaSpinner, FaBars, FaTrash } from 'react-icons/fa';
 import { SetStateAction, useCallback, useState } from 'react';
 import api from '../../services/api';
+import { Link } from 'react-router-dom';
 
 function Main() {
   const [newRepo, setNewRepo] = useState('');
@@ -36,6 +37,11 @@ function Main() {
     submit();
   }, [newRepo, repositories]);
 
+  const handleDelete = useCallback((repoName: string) => {
+    const findRepo = repositories.filter(item => item.name !== repoName);
+    setRepositories(findRepo);
+  },[repositories]);
+
   return (
     <S.Container>
       <h1>
@@ -57,6 +63,20 @@ function Main() {
           }
         </S.SubmitButton>
       </S.Form>
+
+      <S.List>
+        {
+          repositories.map((item) => (
+            <li key={item.name}>
+              <span>
+                <S.RemoveButton onClick={() => handleDelete(item.name)}><FaTrash size={14}/></S.RemoveButton>
+                {item.name}
+              </span>
+              <Link to="/"><FaBars size={20} /></Link>
+            </li>
+          ))
+        }
+      </S.List>
     </S.Container>
   )
 }
