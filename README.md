@@ -16,8 +16,7 @@
 ### How to run the application
 `yarn dev`
 
-## Author
-  - Emilly Landim :purple_heart:
+Made with 💜 by <a href="https://github.com/emyslandim" target="_blank">emyslandim</a>.
  
 
 
